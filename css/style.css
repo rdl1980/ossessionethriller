@@ -1,0 +1,671 @@
+/* ============================================================
+   OSSESSIONE THRILLER — Design System
+   Fonts: Oswald (headings) · Spectral (body) · Space Mono (labels)
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Spectral:ital,wght@0,300;0,400;0,600;1,400&family=Space+Mono:wght@400;700&display=swap');
+
+/* ── Variables ───────────────────────────────────────────── */
+:root {
+  --accent:      #c41e22;
+  --bg:          #0b090a;
+  --bg-alt:      #0e0b0c;
+  --bg-card:     #100c0d;
+  --bg-dark:     #000;
+  --text:        #f1ece6;
+  --text-warm:   #f4efe9;
+  --text-dim:    #cfc9c3;
+  --text-mid:    #bcb6b0;
+  --text-muted:  #9a948e;
+  --text-faint:  #8a847e;
+  --text-ghost:  #7c756f;
+  --text-shadow: #5f5a55;
+  --border:      #1c1819;
+  --border-card: #221d1e;
+  --border-mid:  #292425;
+  --border-dim:  #3a3531;
+  --border-deep: #4a4642;
+  --font-heading: 'Oswald', sans-serif;
+  --font-body:    'Spectral', Georgia, serif;
+  --font-mono:    'Space Mono', monospace;
+  --tagline:      "Libri che ti prendono. Storie che ti restano.";
+}
+
+/* ── Reset ───────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+img { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+input, button, textarea { font-family: inherit; outline: none; }
+
+/* ── Utility bar ─────────────────────────────────────────── */
+.ot-utilbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 9px 40px;
+  background: #000;
+  border-bottom: 1px solid var(--border);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: .18em;
+  color: var(--text-ghost);
+  text-transform: uppercase;
+}
+.ot-utilbar span { display: flex; gap: 22px; }
+
+/* ── Main nav ────────────────────────────────────────────── */
+.ot-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 40px;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.ot-logo {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-decoration: none;
+}
+.ot-logo img {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+}
+.ot-logo-text { line-height: .92; }
+.ot-logo-text .ot-logo-top {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 21px;
+  letter-spacing: .04em;
+  color: var(--text);
+}
+.ot-logo-text .ot-logo-bot {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 21px;
+  letter-spacing: .16em;
+  color: var(--accent);
+}
+.ot-nav {
+  display: flex;
+  gap: 30px;
+  font-family: var(--font-heading);
+  font-weight: 500;
+  font-size: 15px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  list-style: none;
+}
+.ot-nav a {
+  color: var(--text-dim);
+  text-decoration: none;
+  transition: color .2s;
+}
+.ot-nav a:hover,
+.ot-nav a.active { color: var(--text); }
+.ot-header-actions { display: flex; align-items: center; gap: 18px; }
+.ot-search-icon {
+  font-size: 16px;
+  color: var(--text-dim);
+  cursor: pointer;
+}
+
+/* ── Buttons ─────────────────────────────────────────────── */
+.ot-btn {
+  display: inline-block;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: #fff;
+  background: var(--accent);
+  padding: 11px 18px;
+  border: none;
+  cursor: pointer;
+  transition: opacity .2s;
+  text-decoration: none;
+}
+.ot-btn:hover { opacity: .85; }
+.ot-btn-outline {
+  background: transparent;
+  color: var(--text-warm);
+  border: 1px solid var(--border-deep);
+}
+.ot-btn-lg { font-size: 15px; padding: 15px 28px; }
+
+/* ── Chips / filter pills ────────────────────────────────── */
+.ot-chip {
+  display: inline-block;
+  padding: 9px 16px;
+  border: 1px solid var(--border-mid);
+  color: var(--text-muted);
+  font-family: var(--font-heading);
+  font-size: 13px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: border-color .2s, color .2s;
+}
+.ot-chip:hover { border-color: var(--accent); color: var(--text); }
+.ot-chip.active { background: var(--accent); border-color: var(--accent); color: #fff; }
+
+/* ── Cards ───────────────────────────────────────────────── */
+.ot-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  transition: border-color .2s;
+}
+.ot-card:hover { border-color: #3a3531; }
+
+/* ── Decorative thread ───────────────────────────────────── */
+.ot-thread {
+  position: absolute;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #3a1a1c 40%, transparent);
+  pointer-events: none;
+}
+
+/* ── Label (mono tag) ────────────────────────────────────── */
+.ot-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: .18em;
+  color: var(--accent);
+  text-transform: uppercase;
+}
+
+/* ── Section heading ─────────────────────────────────────── */
+.ot-section-head {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 34px;
+  letter-spacing: .03em;
+  color: var(--text);
+  text-transform: uppercase;
+  margin: 0;
+}
+
+/* ── Breadcrumb ──────────────────────────────────────────── */
+.ot-breadcrumb {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: .2em;
+  color: var(--text-faint);
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+.ot-breadcrumb span { color: var(--accent); }
+
+/* ── Rating bars ─────────────────────────────────────────── */
+.ot-rating-bar-track {
+  height: 4px;
+  background: var(--border-card);
+}
+.ot-rating-bar-fill {
+  height: 100%;
+  background: var(--accent);
+}
+
+/* ── Pull quote ──────────────────────────────────────────── */
+.ot-blockquote {
+  border-left: 3px solid var(--accent);
+  padding: 6px 0 6px 26px;
+  margin: 0 0 30px;
+}
+.ot-blockquote p {
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 25px;
+  line-height: 1.4;
+  color: var(--text-warm);
+}
+
+/* ── Newsletter input group ──────────────────────────────── */
+.ot-input-group { display: flex; gap: 0; }
+.ot-input {
+  flex: 1;
+  background: var(--bg);
+  border: 1px solid var(--border-dim);
+  border-right: none;
+  color: var(--text-warm);
+  padding: 15px 16px;
+  font-family: var(--font-mono);
+  font-size: 14px;
+}
+.ot-input::placeholder { color: var(--text-faint); }
+.ot-input-group .ot-btn { border: none; white-space: nowrap; }
+
+/* ── Book cover placeholder ──────────────────────────────── */
+.ot-cover-placeholder {
+  background: repeating-linear-gradient(
+    45deg,
+    #181213, #181213 8px,
+    #131011 8px, #131011 16px
+  );
+  border: 1px solid #2a2425;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.ot-cover-placeholder span {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: .18em;
+  color: var(--text-shadow);
+  text-transform: uppercase;
+}
+
+/* ── Score badge ─────────────────────────────────────────── */
+.ot-score {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-dim);
+}
+.ot-score strong { color: var(--accent); font-weight: 700; }
+
+/* ── Condensed footer ────────────────────────────────────── */
+.ot-footer-mini {
+  padding: 26px 40px;
+  background: var(--bg-dark);
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: .08em;
+  color: var(--text-shadow);
+}
+.ot-footer-mini a { color: var(--text-ghost); }
+.ot-footer-mini a:hover { color: var(--text-dim); }
+.ot-footer-mini-links { display: flex; gap: 18px; }
+
+/* ── Full footer ─────────────────────────────────────────── */
+.ot-footer {
+  padding: 48px 40px 36px;
+  background: var(--bg-dark);
+  border-top: 1px solid var(--border);
+}
+.ot-footer-grid {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1fr 1fr;
+  gap: 32px;
+  margin-bottom: 36px;
+}
+.ot-footer-brand { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
+.ot-footer-brand img { width: 46px; height: 46px; border-radius: 50%; }
+.ot-footer-tagline { font-size: 14px; line-height: 1.6; color: var(--text-ghost); max-width: 300px; }
+.ot-footer-col-title {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: .16em;
+  color: var(--text-faint);
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+.ot-footer-links { display: flex; flex-direction: column; gap: 9px; }
+.ot-footer-links a { font-size: 14px; color: var(--text-muted); }
+.ot-footer-links a:hover { color: var(--text-dim); }
+.ot-footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #1a1617;
+  padding-top: 20px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: .08em;
+  color: var(--text-shadow);
+}
+.ot-footer-bottom a { color: var(--text-ghost); }
+.ot-footer-legal { display: flex; gap: 18px; }
+
+/* ── Discussion / comments ───────────────────────────────── */
+.ot-comment { display: flex; gap: 14px; }
+.ot-comment-avatar {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: #241a1b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--accent);
+}
+.ot-comment-meta {
+  display: flex;
+  gap: 10px;
+  align-items: baseline;
+  margin-bottom: 4px;
+}
+.ot-comment-author {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--text-warm);
+  letter-spacing: .04em;
+}
+.ot-comment-date {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-shadow);
+}
+.ot-comment-text {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+.ot-comment-form { display: flex; gap: 10px; }
+.ot-comment-input {
+  flex: 1;
+  background: var(--bg);
+  border: 1px solid var(--border-mid);
+  color: var(--text-warm);
+  padding: 13px 16px;
+  font-family: var(--font-body);
+  font-size: 15px;
+}
+.ot-comment-input::placeholder { color: var(--text-faint); }
+
+/* ── Buy box ─────────────────────────────────────────────── */
+.ot-buy-box {
+  background: #140a0b;
+  border: 1px solid #2a1a1b;
+  padding: 20px;
+  margin-bottom: 24px;
+}
+.ot-buy-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 13px 16px;
+  margin-bottom: 9px;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: opacity .2s;
+}
+.ot-buy-link:hover { opacity: .85; }
+.ot-buy-link.primary { background: var(--accent); color: #fff; }
+.ot-buy-link.secondary { border: 1px solid var(--border-dim); color: var(--text-warm); }
+.ot-buy-link .price { font-family: var(--font-mono); font-weight: 400; }
+.ot-buy-link.secondary .price { color: var(--text-muted); }
+.ot-buy-note {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  line-height: 1.5;
+  color: var(--text-shadow);
+  margin-top: 12px;
+}
+
+/* ── Book info table ─────────────────────────────────────── */
+.ot-scheda {
+  border: 1px solid var(--border-card);
+  padding: 20px;
+}
+.ot-scheda-title {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: .16em;
+  color: var(--text-faint);
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+.ot-scheda-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 9px 0;
+  border-bottom: 1px solid var(--border);
+  font-family: var(--font-mono);
+  font-size: 13px;
+}
+.ot-scheda-row:last-child { border-bottom: none; }
+.ot-scheda-row .key { color: var(--text-ghost); }
+.ot-scheda-row .val { color: var(--text-dim); }
+
+/* ── Pagination ──────────────────────────────────────────── */
+.ot-pagination {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  padding: 24px 40px 40px;
+}
+.ot-page-btn {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-heading);
+  font-size: 15px;
+  cursor: pointer;
+  border: 1px solid var(--border-mid);
+  color: var(--text-muted);
+  transition: all .2s;
+}
+.ot-page-btn.active { background: var(--accent); border-color: var(--accent); color: #fff; }
+.ot-page-btn:hover:not(.active) { border-color: var(--accent); color: var(--text); }
+
+/* ── Genre strip cards ───────────────────────────────────── */
+.ot-genre-card {
+  border: 1px solid var(--border-mid);
+  padding: 18px 18px 16px;
+  background: #141011;
+  cursor: pointer;
+  transition: border-color .2s;
+}
+.ot-genre-card:hover { border-color: var(--accent); }
+.ot-genre-title {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 18px;
+  letter-spacing: .04em;
+  color: var(--text-warm);
+  text-transform: uppercase;
+}
+.ot-genre-sub { font-size: 13px; color: var(--text-faint); margin-top: 4px; }
+
+/* ── Ranking list ────────────────────────────────────────── */
+.ot-rank-row {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--border);
+}
+.ot-rank-row:last-child { border-bottom: none; }
+.ot-rank-num {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 30px;
+  width: 34px;
+  flex-shrink: 0;
+}
+.ot-rank-num.first { color: var(--accent); }
+.ot-rank-num.rest { color: #4a443f; }
+.ot-rank-title {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 19px;
+  color: var(--text-warm);
+  text-transform: uppercase;
+}
+.ot-rank-author { font-size: 13.5px; color: var(--text-faint); font-style: italic; }
+.ot-rank-score { font-family: var(--font-mono); font-size: 12px; color: var(--text-faint); margin-left: auto; }
+
+/* ── Upcoming book ───────────────────────────────────────── */
+.ot-upcoming {
+  display: flex;
+  gap: 16px;
+  padding: 14px;
+  background: #141011;
+  border: 1px solid var(--border-card);
+}
+.ot-upcoming-cover {
+  width: 58px;
+  height: 84px;
+  flex-shrink: 0;
+  background: repeating-linear-gradient(45deg, #181213, #181213 6px, #131011 6px, #131011 12px);
+  border: 1px solid #2a2425;
+}
+.ot-upcoming-date {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--accent);
+  letter-spacing: .1em;
+}
+.ot-upcoming-title {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 19px;
+  color: var(--text-warm);
+  text-transform: uppercase;
+  margin: 2px 0;
+}
+.ot-upcoming-meta { font-size: 13.5px; color: var(--text-faint); font-style: italic; }
+
+/* ── Magazine cards ──────────────────────────────────────── */
+.ot-mag-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  display: flex;
+  flex-direction: column;
+  transition: border-color .2s;
+}
+.ot-mag-card:hover { border-color: #3a3531; }
+.ot-mag-img {
+  background: repeating-linear-gradient(45deg, #181213, #181213 8px, #131011 8px, #131011 16px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.ot-mag-img span {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: .18em;
+  color: var(--text-shadow);
+}
+.ot-mag-body { padding: 24px; }
+.ot-mag-type {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: .16em;
+  color: var(--accent);
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.ot-mag-title {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  line-height: 1.05;
+  color: var(--text);
+  text-transform: uppercase;
+  margin: 0 0 10px;
+}
+.ot-mag-excerpt { font-size: 14.5px; line-height: 1.55; color: var(--text-muted); }
+
+/* ── Community stats ─────────────────────────────────────── */
+.ot-stat-num {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 1;
+}
+.ot-stat-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: .1em;
+  color: var(--text-faint);
+  text-transform: uppercase;
+}
+
+/* ── Review card (catalog) ───────────────────────────────── */
+.ot-rev-card {
+  display: flex;
+  gap: 18px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  padding: 18px;
+  transition: border-color .2s;
+}
+.ot-rev-card:hover { border-color: #3a3531; }
+.ot-rev-cover {
+  width: 96px;
+  height: 144px;
+  flex-shrink: 0;
+  background: repeating-linear-gradient(45deg, #181213, #181213 7px, #131011 7px, #131011 14px);
+  border: 1px solid #2a2425;
+}
+.ot-rev-genre {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: .14em;
+  color: var(--accent);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.ot-rev-title {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 21px;
+  color: var(--text);
+  text-transform: uppercase;
+  margin: 0 0 3px;
+  line-height: 1.05;
+}
+.ot-rev-author { font-size: 13.5px; color: var(--text-faint); font-style: italic; margin-bottom: 10px; }
+
+/* ── Sidebar genre list ──────────────────────────────────── */
+.ot-genre-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+  font-family: var(--font-heading);
+  font-size: 15px;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  transition: color .2s;
+}
+.ot-genre-row:last-child { border-bottom: none; }
+.ot-genre-row:hover { color: var(--text); }
+.ot-genre-count {
+  color: var(--text-shadow);
+  font-family: var(--font-mono);
+  font-size: 12px;
+}
+
+/* ── Responsive basics ───────────────────────────────────── */
+@media (max-width: 1024px) {
+  .ot-nav { gap: 18px; font-size: 13px; }
+  .ot-footer-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 768px) {
+  .ot-utilbar, .ot-header { padding: 9px 20px; }
+  .ot-nav { display: none; }
+  .ot-footer-grid { grid-template-columns: 1fr; }
+  .ot-footer-mini, .ot-footer { padding: 20px; }
+}

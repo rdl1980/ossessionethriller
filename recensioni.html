@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Recensioni — Ossessione Thriller</title>
+  <meta name="description" content="Tutte le recensioni di Ossessione Thriller: ogni titolo letto fino in fondo, votato senza pietà e raccontato senza spoiler.">
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- UTILITY BAR -->
+  <div class="ot-utilbar">
+    <span>Dal 2025 · La community italiana del thriller</span>
+    <span>
+      <span>Spedizione tracce &amp; indizi ogni venerdì</span>
+      <a href="#">Accedi</a>
+    </span>
+  </div>
+
+  <!-- HEADER -->
+  <header class="ot-header">
+    <a href="index.html" class="ot-logo">
+      <img src="assets/logo.svg" alt="Ossessione Thriller">
+      <div class="ot-logo-text">
+        <div class="ot-logo-top">OSSESSIONE</div>
+        <div class="ot-logo-bot">THRILLER</div>
+      </div>
+    </a>
+    <nav>
+      <ul class="ot-nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="recensioni.html" class="active">Recensioni</a></li>
+        <li><a href="#">Generi ▾</a></li>
+        <li><a href="#">Classifiche</a></li>
+        <li><a href="#">Novità</a></li>
+        <li><a href="#">Magazine</a></li>
+        <li><a href="#">Community</a></li>
+      </ul>
+    </nav>
+    <div class="ot-header-actions">
+      <span class="ot-search-icon">⌕</span>
+      <a href="index.html#newsletter" class="ot-btn">Newsletter</a>
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════════════════════════════════
+       PAGE HERO
+  ═══════════════════════════════════════════════════════ -->
+  <div style="
+    padding: 40px 40px 28px;
+    background: radial-gradient(120% 120% at 80% 0%, #160f10, var(--bg) 60%);
+    border-bottom: 1px solid var(--border);
+  ">
+    <div class="ot-breadcrumb">Home / <span>Recensioni</span></div>
+    <h1 style="
+      font-family: var(--font-heading); font-weight: 700;
+      font-size: 54px; letter-spacing: .02em;
+      color: var(--text-warm); text-transform: uppercase;
+      margin: 0 0 8px;
+    ">Recensioni</h1>
+    <p style="font-size: 17px; color: var(--text-muted); margin: 0;">
+      Ogni titolo letto fino in fondo, votato senza pietà e raccontato senza spoiler.
+    </p>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════
+       FILTER BAR
+  ═══════════════════════════════════════════════════════ -->
+  <div style="
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 18px 40px;
+    background: var(--bg-alt);
+    border-bottom: 1px solid var(--border);
+    flex-wrap: wrap; gap: 14px;
+  ">
+    <div id="filter-buttons" style="display: flex; gap: 10px; flex-wrap: wrap;">
+      <button class="ot-chip active" data-filter="all">Tutti</button>
+      <button class="ot-chip" data-filter="Psicologico">Psicologico</button>
+      <button class="ot-chip" data-filter="Giallo">Giallo</button>
+      <button class="ot-chip" data-filter="Suspense">Suspense</button>
+      <button class="ot-chip" data-filter="Techno">Techno</button>
+      <button class="ot-chip" data-filter="Nordic Noir">Nordic Noir</button>
+      <button class="ot-chip" data-filter="True Crime">True Crime</button>
+      <button class="ot-chip" data-filter="Horror">Horror</button>
+      <button class="ot-chip" data-filter="Legal">Legal &amp; Spy</button>
+    </div>
+    <div style="display: flex; align-items: center; gap: 16px; font-family: var(--font-mono); font-size: 12px; color: var(--text-faint);">
+      <span id="result-count">12 risultati</span>
+      <select id="sort-select" style="
+        padding: 9px 14px; border: 1px solid var(--border-mid);
+        color: var(--text-dim); background: var(--bg-alt);
+        font-family: var(--font-mono); font-size: 12px;
+        cursor: pointer;
+      ">
+        <option value="recent">Più recenti</option>
+        <option value="score-desc">Voto: dal più alto</option>
+        <option value="score-asc">Voto: dal più basso</option>
+        <option value="alpha">A → Z</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════
+       REVIEW GRID
+  ═══════════════════════════════════════════════════════ -->
+  <section style="padding: 32px 40px 12px; background: var(--bg);">
+    <div id="review-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; max-width: 1360px; margin: 0 auto;">
+
+      <article class="ot-rev-card ot-card" data-genre="Psicologico" data-score="4.5" data-title="Io sono l'abisso" data-date="2026-06-14">
+        <div class="ot-rev-cover"></div>
+        <div>
+          <div class="ot-rev-genre">Psicologico</div>
+          <h2 class="ot-rev-title"><a href="recensione.html">Io sono l'abisso</a></h2>
+          <div class="ot-rev-author">Donato Carrisi</div>
+          <p style="font-size: 14px; line-height: 1.55; color: var(--text-muted); margin: 0 0 12px;">
+            Due solitudini, una città, e un meccanismo narrativo che stringe senza scampo.
+          </p>
+          <div class="ot-score"><strong>4.5</strong>/5</div>
+        </div>
+      </article>
+
+      <article class="ot-rev-card ot-card" data-genre="Nordic Noir" data-score="4.0" data-title="Il pupazzo di neve" data-date="2026-06-06">
+        <div class="ot-rev-cover"></div>
+        <div>
+          <div class="ot-rev-genre">Nordic Noir</div>
+          <h2 class="ot-rev-title">Il pupazzo di neve</h2>
+          <div class="ot-rev-author">Jo Nesbø</div>
+          <p style="font-size: 14px; line-height: 1.55; color: var(--text-muted); margin: 0 0 12px;">
+            Harry Hole sulle tracce di un killer che colpisce con la prima neve.
+          </p>
+          <div class="ot-score"><strong>4.0</strong>/5</div>
+        </div>
+      </article>
+
+      <article class="ot-rev-card ot-card" data-genre="Psicologico" data-score="4.5" data-title="L'amore bugiardo" data-date="2026-06-03">
+        <div class="ot-rev-cover"></div>
+        <div>
+          <div class="ot-rev-genre">Psicologico</div>
+          <h2 class="ot-rev-title">L'amore bugiardo</h2>
+          <div class="ot-rev-author">Gillian Flynn</div>
+          <p style="font-size: 14px; line-height: 1.55; color: var(--text-muted); margin: 0 0 12px;">
+            Un matrimonio che si sgretola e una verità che si ribalta a metà libro.
+          </p>
+          <div class="ot-score"><strong>4.5</strong>/5</div>
+        </div>
+      </article>
+
+      <article class="ot-rev-card ot-card" data-genre="Giallo" data-score="4.0" data-title="Il metodo del coccodrillo" data-date="2026-06-01">
+        <div class="ot-rev-cover"></div>
+        <div>
+          <div class="ot-rev-genre">Giallo</div>
+          <h2 class="ot-rev-title">Il metodo del coccodrillo</h2>
+          <div class="ot-rev-author">Maurizio de Giovanni</div>
+          <p style="font-size: 14px; line-height: 1.55; color: var(--text-muted); margin: 0 0 12px;">
+            Napoli, un ispettore solitario, un assassino che piange sulle sue vittime.
+          </p>
+          <div class="ot-score"><strong>4.0</strong>/5</div>
+        </div>
+      </article>
+
+      <article class="ot-rev-card ot-card" data-genre="Suspense" data-score="5.0" data-title="Misery" data-date="2026-05-28">
+        <div class="ot-rev-cover"></div>
+        <div>
+          <div class="ot-rev-genre">Suspense</div>
+          <h2 class="ot-rev-title">Misery</h2>
+          <div class="ot-rev-author">Stephen King</div>
+          <p style="font-size: 14px; line-height: 1.55; color: var(--text-muted); margin: 0 0 12px;">
+            Un caso estremo di fandom. La claustrofobia elevata a letteratura assoluta.
+          </p>
+          <div class="ot-score"><strong>5.0</strong>/5</div>
+        </div>
+      </article>
+
+      <article class="ot-rev-card ot-card" data-genre="Nordic Noir" data-score="4.0" data-title="Uomini che odiano le donne" data-date="2026-05-20">
+        <div class="ot-rev-cover"></div>
+        <div>
+          <div class="ot-rev-genre">Nordic Noir</div>
+          <h2 class="ot-rev-title">Uomini che odiano le donne</h2>
+          <div class="ot-rev-author">Stieg Larsson</div>
+          <p style="font-size: 14px; line-height: 1.55; color: var(--text-muted); margin: 0 0 12px;">
+            Il capostipite del noir scandinavo moderno. Lisbeth Salander è ancora leggenda.
+          </p>
+          <div class="ot-score"><strong>4.0</strong>/5</div>
+        </div>
+      </article>
+
+      <article class="ot-rev-card ot-card" data-genre="Suspense" data-score="5.0" data-title="Il silenzio degli innocenti" data-date="2026-05-14">
+        <div class="ot-rev-cover"></div>
+        <div>
+          <div class="ot-rev-genre">Suspense</div>
+          <h2 class="ot-rev-title">Il silenzio degli innocenti</h2>
+          <div class="ot-rev-author">Thomas Harris</div>
+          <p style="font-size: 14px; line-height: 1.55; color: var(--text-muted); margin: 0 0 12px;">
+            Hannibal Lecter. Basta il nome per capire perché è un 5/5 senza discussioni.
+          </p>
+          <div class="ot-score"><strong>5.0</strong>/5</div>
+        </div>
+      </article>
+
+      <article class="ot-rev-card ot-card" data-genre="Legal" data-score="4.0" data-title="Il socio" data-date="2026-05-07">
+        <div class="ot-rev-cover"></div>
+        <div>
+          <div class="ot-rev-genre">Legal &amp; Spy</div>
+          <h2 class="ot-rev-title">Il socio</h2>
+          <div class="ot-rev-author">John Grisham</div>
+          <p style="font-size: 14px; line-height: 1.55; color: var(--text-muted); margin: 0 0 12px;">
+            Avvocati, mafia e accordi segreti. Grisham al suo meglio.
+          </p>
+          <div class="ot-score"><strong>4.0</strong>/5</div>
+        </div>
+      </article>
+
+      <article class="ot-rev-card ot-card" data-genre="True Crime" data-score="5.0" data-title="A sangue freddo" data-date="2026-04-28">
+        <div class="ot-rev-cover"></div>
+        <div>
+          <div class="ot-rev-genre">True Crime</div>
+          <h2 class="ot-rev-title">A sangue freddo</h2>
+          <div class="ot-rev-author">Truman Capote</div>
+          <p style="font-size: 14px; line-height: 1.55; color: var(--text-muted); margin: 0 0 12px;">
+            Il vero crimine raccontato con la potenza del romanzo. Irripetibile.
+          </p>
+          <div class="ot-score"><strong>5.0</strong>/5</div>
+        </div>
+      </article>
+
+      <article class="ot-rev-card ot-card" data-genre="Techno" data-score="4.0" data-title="La sostanza del male" data-date="2026-04-18">
+        <div class="ot-rev-cover"></div>
+        <div>
+          <div class="ot-rev-genre">Techno</div>
+          <h2 class="ot-rev-title">La sostanza del male</h2>
+          <div class="ot-rev-author">Luca D'Andrea</div>
+          <p style="font-size: 14px; line-height: 1.55; color: var(--text-muted); margin: 0 0 12px;">
+            Le Dolomiti, un massacro irrisolto, una forza oscura che non si spiega con la ragione.
+          </p>
+          <div class="ot-score"><strong>4.0</strong>/5</div>
+        </div>
+      </article>
+
+      <article class="ot-rev-card ot-card" data-genre="Psicologico" data-score="4.5" data-title="Shutter Island" data-date="2026-04-10">
+        <div class="ot-rev-cover"></div>
+        <div>
+          <div class="ot-rev-genre">Psicologico</div>
+          <h2 class="ot-rev-title">Shutter Island</h2>
+          <div class="ot-rev-author">Dennis Lehane</div>
+          <p style="font-size: 14px; line-height: 1.55; color: var(--text-muted); margin: 0 0 12px;">
+            Un'isola, un manicomio criminale, una verità che non smette di cambiare forma.
+          </p>
+          <div class="ot-score"><strong>4.5</strong>/5</div>
+        </div>
+      </article>
+
+      <article class="ot-rev-card ot-card" data-genre="Psicologico" data-score="3.5" data-title="La ragazza del treno" data-date="2026-03-25">
+        <div class="ot-rev-cover"></div>
+        <div>
+          <div class="ot-rev-genre">Psicologico</div>
+          <h2 class="ot-rev-title">La ragazza del treno</h2>
+          <div class="ot-rev-author">Paula Hawkins</div>
+          <p style="font-size: 14px; line-height: 1.55; color: var(--text-muted); margin: 0 0 12px;">
+            Narratrice inaffidabile, suspense costruita bene. Non all'altezza del hype, ma si legge.
+          </p>
+          <div class="ot-score"><strong>3.5</strong>/5</div>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- No results message -->
+    <div id="no-results" style="display: none; padding: 60px 40px; text-align: center;">
+      <div style="font-family: var(--font-mono); font-size: 12px; letter-spacing: .2em; color: var(--accent); margin-bottom: 12px;">NESSUN RISULTATO</div>
+      <p style="font-size: 17px; color: var(--text-muted);">Nessuna recensione trovata per questo genere. Presto in arrivo.</p>
+    </div>
+
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════
+       PAGINATION
+  ═══════════════════════════════════════════════════════ -->
+  <div class="ot-pagination" style="background: var(--bg);">
+    <div class="ot-page-btn active">1</div>
+    <div class="ot-page-btn">2</div>
+    <div class="ot-page-btn">3</div>
+    <div class="ot-page-btn">→</div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="ot-footer-mini">
+    <span>© 2026 Ossessione Thriller · Alcuni link sono affiliati</span>
+    <div class="ot-footer-mini-links">
+      <a href="#">Privacy</a>
+      <a href="#">Cookie</a>
+      <a href="#">Note legali</a>
+    </div>
+  </footer>
+
+  <!-- ═══════════════════════════════════════════════════════
+       FILTER JS
+  ═══════════════════════════════════════════════════════ -->
+  <script>
+    const filterBtns = document.querySelectorAll('[data-filter]');
+    const cards = document.querySelectorAll('[data-genre]');
+    const countEl = document.getElementById('result-count');
+    const noResults = document.getElementById('no-results');
+    const sortSelect = document.getElementById('sort-select');
+    const grid = document.getElementById('review-grid');
+
+    let activeFilter = 'all';
+
+    function applyFilter() {
+      let visible = 0;
+      const items = Array.from(cards);
+
+      // Sort first
+      const sortVal = sortSelect.value;
+      items.sort((a, b) => {
+        if (sortVal === 'score-desc') return parseFloat(b.dataset.score) - parseFloat(a.dataset.score);
+        if (sortVal === 'score-asc')  return parseFloat(a.dataset.score) - parseFloat(b.dataset.score);
+        if (sortVal === 'alpha')      return a.dataset.title.localeCompare(b.dataset.title, 'it');
+        // recent (default)
+        return new Date(b.dataset.date) - new Date(a.dataset.date);
+      });
+
+      items.forEach(card => {
+        grid.appendChild(card); // re-order in DOM
+        const match = activeFilter === 'all' || card.dataset.genre === activeFilter;
+        card.style.display = match ? 'flex' : 'none';
+        if (match) visible++;
+      });
+
+      countEl.textContent = visible + ' risultat' + (visible === 1 ? 'o' : 'i');
+      noResults.style.display = visible === 0 ? 'block' : 'none';
+    }
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        activeFilter = btn.dataset.filter;
+        applyFilter();
+      });
+    });
+
+    sortSelect.addEventListener('change', applyFilter);
+
+    // Init
+    applyFilter();
+
+    // Read URL param
+    const urlParams = new URLSearchParams(window.location.search);
+    const genreParam = urlParams.get('genere');
+    if (genreParam) {
+      const mapping = {
+        'psicologico': 'Psicologico',
+        'giallo': 'Giallo',
+        'suspense': 'Suspense',
+        'techno': 'Techno',
+        'nordic': 'Nordic Noir',
+        'truecrime': 'True Crime',
+        'horror': 'Horror',
+        'legal': 'Legal'
+      };
+      const genre = mapping[genreParam];
+      if (genre) {
+        const btn = document.querySelector('[data-filter="' + genre + '"]');
+        if (btn) btn.click();
+      }
+    }
+  </script>
+
+</body>
+</html>
