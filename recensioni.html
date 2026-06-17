@@ -109,7 +109,7 @@
     <div id="review-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; max-width: 1360px; margin: 0 auto;">
 
       <article class="ot-rev-card ot-card" data-genre="Psicologico" data-score="4.5" data-title="Io sono l'abisso" data-date="2026-06-14">
-        <img class="ot-rev-cover" src="https://covers.openlibrary.org/b/isbn/9788830453500-L.jpg" alt="Io sono l'abisso">
+        <img class="ot-rev-cover" src="assets/io%20sono%20l'abisso.jpg" alt="Io sono l'abisso">
         <div>
           <div class="ot-rev-genre">Psicologico</div>
           <h2 class="ot-rev-title"><a href="recensione.html">Io sono l'abisso</a></h2>
@@ -135,7 +135,7 @@
       </article>
 
       <article class="ot-rev-card ot-card" data-genre="Psicologico" data-score="4.5" data-title="L'amore bugiardo" data-date="2026-06-03">
-        <img class="ot-rev-cover" src="https://covers.openlibrary.org/b/isbn/9780307588364-L.jpg" alt="L'amore bugiardo">
+        <img class="ot-rev-cover" src="assets/L'amore%20bugiardo.jpg" alt="L'amore bugiardo">
         <div>
           <div class="ot-rev-genre">Psicologico</div>
           <h2 class="ot-rev-title">L'amore bugiardo</h2>
@@ -148,7 +148,7 @@
       </article>
 
       <article class="ot-rev-card ot-card" data-genre="Giallo" data-score="4.0" data-title="Il metodo del coccodrillo" data-date="2026-06-01">
-        <img class="ot-rev-cover" src="https://covers.openlibrary.org/b/isbn/9788806230883-L.jpg" alt="Il metodo del coccodrillo">
+        <img class="ot-rev-cover" src="assets/il%20metodo%20del%20coccodrillo.jpg" alt="Il metodo del coccodrillo">
         <div>
           <div class="ot-rev-genre">Giallo</div>
           <h2 class="ot-rev-title">Il metodo del coccodrillo</h2>
@@ -239,7 +239,7 @@
       </article>
 
       <article class="ot-rev-card ot-card" data-genre="Psicologico" data-score="4.5" data-title="Shutter Island" data-date="2026-04-10">
-        <img class="ot-rev-cover" src="https://covers.openlibrary.org/b/isbn/9780062068415-L.jpg" alt="Shutter Island">
+        <img class="ot-rev-cover" src="assets/shutter%20island.jpg" alt="Shutter Island">
         <div>
           <div class="ot-rev-genre">Psicologico</div>
           <h2 class="ot-rev-title">Shutter Island</h2>
@@ -325,4 +325,5 @@
 
       items.forEach(card => {
         grid.appendChild(card); // re-order in DOM
-        const match = active
+        const match = activeFilter === 'all' || card.dataset.genre === activeFilter;
+        card.style.display = match ? 'flex
