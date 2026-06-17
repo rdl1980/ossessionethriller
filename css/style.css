@@ -262,6 +262,11 @@ input, button, textarea { font-family: inherit; outline: none; }
   align-items: center;
   justify-content: center;
 }
+img.ot-cover-placeholder {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+}
 .ot-cover-placeholder span {
   font-family: var(--font-mono);
   font-size: 11px;
@@ -617,6 +622,8 @@ input, button, textarea { font-family: inherit; outline: none; }
   flex-shrink: 0;
   background: repeating-linear-gradient(45deg, #181213, #181213 7px, #131011 7px, #131011 14px);
   border: 1px solid #2a2425;
+  object-fit: cover;
+  display: block;
 }
 .ot-rev-genre {
   font-family: var(--font-mono);
@@ -665,7 +672,4 @@ input, button, textarea { font-family: inherit; outline: none; }
 }
 @media (max-width: 768px) {
   .ot-utilbar, .ot-header { padding: 9px 20px; }
-  .ot-nav { display: none; }
-  .ot-footer-grid { grid-template-columns: 1fr; }
-  .ot-footer-mini, .ot-footer { padding: 20px; }
-}
+  .ot-na
