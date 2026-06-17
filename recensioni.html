@@ -122,7 +122,7 @@
       </article>
 
       <article class="ot-rev-card ot-card" data-genre="Nordic Noir" data-score="4.0" data-title="L'uomo di neve" data-date="2026-06-06">
-        <img class="ot-rev-cover" src="https://covers.openlibrary.org/b/isbn/9780307358837-L.jpg" alt="L'uomo di neve">
+        <img class="ot-rev-cover" src="assets/l'uomo%20di%20neve.jpg" alt="L'uomo di neve">
         <div>
           <div class="ot-rev-genre">Nordic Noir</div>
           <h2 class="ot-rev-title">L'uomo di neve</h2>
@@ -331,4 +331,5 @@
       });
 
       countEl.textContent = visible + ' risultat' + (visible === 1 ? 'o' : 'i');
-      noResults.style.display = visible === 0 
+      noResults.style.display = visible === 0 ? 'block' : 'none';
+      //
