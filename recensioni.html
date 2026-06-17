@@ -121,11 +121,11 @@
         </div>
       </article>
 
-      <article class="ot-rev-card ot-card" data-genre="Nordic Noir" data-score="4.0" data-title="Il pupazzo di neve" data-date="2026-06-06">
-        <img class="ot-rev-cover" src="https://covers.openlibrary.org/b/isbn/9780307358837-L.jpg" alt="Il pupazzo di neve">
+      <article class="ot-rev-card ot-card" data-genre="Nordic Noir" data-score="4.0" data-title="L'uomo di neve" data-date="2026-06-06">
+        <img class="ot-rev-cover" src="https://covers.openlibrary.org/b/isbn/9780307358837-L.jpg" alt="L'uomo di neve">
         <div>
           <div class="ot-rev-genre">Nordic Noir</div>
-          <h2 class="ot-rev-title">Il pupazzo di neve</h2>
+          <h2 class="ot-rev-title">L'uomo di neve</h2>
           <div class="ot-rev-author">Jo Nesbø</div>
           <p style="font-size: 14px; line-height: 1.55; color: var(--text-muted); margin: 0 0 12px;">
             Harry Hole sulle tracce di un killer che colpisce con la prima neve.
@@ -174,7 +174,7 @@
       </article>
 
       <article class="ot-rev-card ot-card" data-genre="Nordic Noir" data-score="4.0" data-title="Uomini che odiano le donne" data-date="2026-05-20">
-        <img class="ot-rev-cover" src="https://covers.openlibrary.org/b/isbn/9780307454546-L.jpg" alt="Uomini che odiano le donne">
+        <img class="ot-rev-cover" src="assets/uomini%20che%20odiano%20le%20donne.jpg" alt="Uomini che odiano le donne">
         <div>
           <div class="ot-rev-genre">Nordic Noir</div>
           <h2 class="ot-rev-title">Uomini che odiano le donne</h2>
@@ -187,7 +187,7 @@
       </article>
 
       <article class="ot-rev-card ot-card" data-genre="Suspense" data-score="5.0" data-title="Il silenzio degli innocenti" data-date="2026-05-14">
-        <img class="ot-rev-cover" src="https://covers.openlibrary.org/b/isbn/9780312924584-L.jpg" alt="Il silenzio degli innocenti">
+        <img class="ot-rev-cover" src="assets/il%20silenzio%20degli%20innocenti.jpg" alt="Il silenzio degli innocenti">
         <div>
           <div class="ot-rev-genre">Suspense</div>
           <h2 class="ot-rev-title">Il silenzio degli innocenti</h2>
@@ -200,7 +200,7 @@
       </article>
 
       <article class="ot-rev-card ot-card" data-genre="Legal" data-score="4.0" data-title="Il socio" data-date="2026-05-07">
-        <img class="ot-rev-cover" src="https://covers.openlibrary.org/b/isbn/9780440245926-L.jpg" alt="Il socio">
+        <img class="ot-rev-cover" src="assets/Il%20socio.jpg" alt="Il socio">
         <div>
           <div class="ot-rev-genre">Legal &amp; Spy</div>
           <h2 class="ot-rev-title">Il socio</h2>
@@ -213,7 +213,7 @@
       </article>
 
       <article class="ot-rev-card ot-card" data-genre="True Crime" data-score="5.0" data-title="A sangue freddo" data-date="2026-04-28">
-        <img class="ot-rev-cover" src="https://covers.openlibrary.org/b/isbn/9780679745587-L.jpg" alt="A sangue freddo">
+        <img class="ot-rev-cover" src="assets/a%20sangue%20freddo.jpg" alt="A sangue freddo">
         <div>
           <div class="ot-rev-genre">True Crime</div>
           <h2 class="ot-rev-title">A sangue freddo</h2>
@@ -226,7 +226,7 @@
       </article>
 
       <article class="ot-rev-card ot-card" data-genre="Techno" data-score="4.0" data-title="La sostanza del male" data-date="2026-04-18">
-        <img class="ot-rev-cover" src="https://covers.openlibrary.org/b/isbn/9788806221003-L.jpg" alt="La sostanza del male">
+        <img class="ot-rev-cover" src="assets/la%20sostanza%20del%20male.jpg" alt="La sostanza del male">
         <div>
           <div class="ot-rev-genre">Techno</div>
           <h2 class="ot-rev-title">La sostanza del male</h2>
@@ -252,7 +252,7 @@
       </article>
 
       <article class="ot-rev-card ot-card" data-genre="Psicologico" data-score="3.5" data-title="La ragazza del treno" data-date="2026-03-25">
-        <img class="ot-rev-cover" src="https://covers.openlibrary.org/b/isbn/9781594633669-L.jpg" alt="La ragazza del treno">
+        <img class="ot-rev-cover" src="assets/La%20ragazza%20del%20treno.jpg" alt="La ragazza del treno">
         <div>
           <div class="ot-rev-genre">Psicologico</div>
           <h2 class="ot-rev-title">La ragazza del treno</h2>
@@ -326,4 +326,9 @@
       items.forEach(card => {
         grid.appendChild(card); // re-order in DOM
         const match = activeFilter === 'all' || card.dataset.genre === activeFilter;
-        card.style.display = match ? 'flex
+        card.style.display = match ? 'flex' : 'none';
+        if (match) visible++;
+      });
+
+      countEl.textContent = visible + ' risultat' + (visible === 1 ? 'o' : 'i');
+      
